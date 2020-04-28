@@ -20,8 +20,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   themes = [
     {
       value: 'default',
-      name: 'Corporate',
-    }
+      name: 'Light',
+    },
   ];
 
   currentTheme = 'default';
@@ -62,6 +62,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  changeTheme(themeName: string) {
+    this.themeService.changeTheme(themeName);
   }
 
   toggleSidebar(): boolean {
