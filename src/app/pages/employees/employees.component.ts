@@ -46,6 +46,8 @@ export class EmployeesComponent {
     const data = this.service.getData();
     this.dataService.getEmployees().subscribe((data: any[])=>{
       this.source.load(data);
+    }, (error)=>{
+      this.source.load([])
     })     
   }
 
