@@ -45,11 +45,8 @@ export class EmployeesComponent {
   constructor(private service: SmartTableData, private dataService: DataService) {
     const data = this.service.getData();
     this.dataService.getEmployees().subscribe((data: any[])=>{
-      console.log(data);
       this.source.load(data);
-    }) 
-    // const data = [{id: 1, firstName: "Ashu", lastName: "Ukey", username: "Groot", email: "asd@gmail.com"}]
-    
+    })     
   }
 
   onDeleteConfirm(event): void {
