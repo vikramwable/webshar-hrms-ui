@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 
 import { SmartTableData } from '../../@core/data/smart-table';
@@ -7,7 +7,7 @@ import { DataService } from '../../services/data.service';
 @Component({
   selector: 'ngx-employees',
   templateUrl: './employees.component.html',
-  styleUrls: ['./employees.component.scss']
+  styleUrls: ['./employees.component.scss'],
 })
 export class EmployeesComponent {
   settings = {
@@ -15,7 +15,7 @@ export class EmployeesComponent {
       delete: false,
       add: false,
       edit: false,
-      position: 'right'
+      position: 'right',
     },
     columns: {
       id: {
@@ -43,12 +43,12 @@ export class EmployeesComponent {
 
   source: LocalDataSource = new LocalDataSource();
   constructor(private service: SmartTableData, private dataService: DataService) {
-    const data = this.service.getData();
-    this.dataService.getEmployees().subscribe((data: any[])=>{
+    // const data = this.service.getData();
+    this.dataService.getEmployees().subscribe((data: any[]) => {
       this.source.load(data);
-    }, (error)=>{
-      this.source.load([])
-    })     
+    }, (error) => {
+      this.source.load([]);
+    });
   }
 
   onDeleteConfirm(event): void {
