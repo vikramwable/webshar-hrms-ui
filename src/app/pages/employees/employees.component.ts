@@ -17,8 +17,8 @@ export class EmployeesComponent {
       position: 'right',
     },
     columns: {
-      id: {
-        title: 'ID',
+      empId: {
+        title: 'Employee ID',
         type: 'number',
       },
       firstName: {
