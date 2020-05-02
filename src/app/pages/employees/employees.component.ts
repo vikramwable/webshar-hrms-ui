@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 
-import { SmartTableData } from '../../@core/data/smart-table';
 import { DataService } from '../../services/data.service';
 
 @Component({
@@ -42,8 +41,7 @@ export class EmployeesComponent {
   };
 
   source: LocalDataSource = new LocalDataSource();
-  constructor(private service: SmartTableData, private dataService: DataService) {
-    // const data = this.service.getData();
+  constructor(private dataService: DataService) {
     this.dataService.getEmployees().subscribe((data: any[]) => {
       this.source.load(data);
     }, (error) => {
