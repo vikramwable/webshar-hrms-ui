@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { NbMenuModule } from '@nebular/theme';
-import { NbCardModule, NbIconModule, NbInputModule } from '@nebular/theme';
+import { NbCardModule, NbIconModule, NbInputModule, NbButtonModule, NbCheckboxModule } from '@nebular/theme';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
@@ -23,6 +24,9 @@ import { EmployeesComponent } from './employees/employees.component';
     NbIconModule,
     NbInputModule,
     Ng2SmartTableModule,
+    NbButtonModule,
+    NbCheckboxModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     PagesComponent,
