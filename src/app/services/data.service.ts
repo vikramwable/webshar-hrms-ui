@@ -11,4 +11,12 @@ export class DataService {
   public getEmployees() {
     return this.httpClient.get(this.REST_API_SERVER + '/employees');
   }
+
+  public getOrgs() {
+    return this.httpClient.get(this.REST_API_SERVER + '/organizations');
+  }
+
+  public createEmployee(data: any) {
+    return this.httpClient.post(this.REST_API_SERVER + '/employees', data);
+  }
 }

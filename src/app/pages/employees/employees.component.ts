@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
+import { NbDialogService } from '@nebular/theme';
+import { NewEmployeeComponent } from './new-employee/new-employee.component';
 
 import { DataService } from '../../services/data.service';
 
@@ -41,12 +43,8 @@ export class EmployeesComponent {
   };
 
   source: LocalDataSource = new LocalDataSource();
-  constructor(private dataService: DataService) {
-    this.dataService.getEmployees().subscribe((data: any[]) => {
-      this.source.load(data);
-    }, (error) => {
-      this.source.load([]);
-    });
+  constructor(private dataService: DataService, private dialogService: NbDialogService) {
+    this.loadEmployees();
   }
 
   onDeleteConfirm(event): void {
@@ -55,6 +53,19 @@ export class EmployeesComponent {
     } else {
       event.confirm.reject();
     }
+  }
+
+  open_employee_modal() {
+    this.dialogService.open(NewEmployeeComponent)
+      .onClose.subscribe();
+  }
+
+  public loadEmployees(){
+    this.dataService.getEmployees().subscribe((data: any[]) => {
+      this.source.load(data);
+    }, (error) => {
+      this.source.load([]);
+    });
   }
 
 }

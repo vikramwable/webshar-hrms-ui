@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6">
+    <nb-card>
+      <nb-card-header>Add new Employee</nb-card-header>
+        <nb-card-body>
+          <form [formGroup] = "employee_form" (ngSubmit) = "submit()" ngNativeValidate>
+            <input type="text" nbInput fullWidth placeholder="Firstname" formControlName="firstName" required>
+            <div class="full-name-inputs">
+              <input type="text" nbInput fullWidth placeholder="Middlename" formControlName="middleName" required>
+              <input type="text" nbInput fullWidth placeholder="Lastname" formControlName="lastName" required>
+            </div>
+            <input nbInput placeholder="Date of Birth" [nbDatepicker]="dobpicker" formControlName="dateOfBirth" required>
+            <nb-datepicker #dobpicker></nb-datepicker>
+            <input type="email" nbInput fullWidth placeholder="Email" formControlName="email" required>
+            <div class="input-dates">
+              <input nbInput placeholder="Date of Joining" [nbDatepicker]="startpicker" formControlName="joiningDate" required>
+              <nb-datepicker #startpicker></nb-datepicker>
+              <input nbInput placeholder="Date of Exit" [nbDatepicker]="endpicker" formControlName="exitDate" required>
+              <nb-datepicker #endpicker></nb-datepicker>
+            </div>
+            <nb-select placeholder="Select Organization" fullWidth formControlName="organizationId" required>
+              <nb-option *ngFor="let org of orgs" value="{{org.id}}">{{org.name}}</nb-option>
+            </nb-select>
+            <input type="text" nbInput fullWidth placeholder="Employee Id" formControlName="empId" required>
+            <input type="text" nbInput fullWidth placeholder="Designation" formControlName="designation" required>
+            <input type="text" nbInput fullWidth placeholder="Reports to" formControlName="reportsTo" required>
+            <input type="text" nbInput fullWidth placeholder="Contact Number" formControlName="contact" required>
+            <textarea rows="4" nbInput fullWidth shape="round"  placeholder="Address" formControlName="address" required></textarea>
+            <nb-checkbox [value]="true" formControlName="isActive">Activate</nb-checkbox>
+            <div class="submit_buttons">
+              <button class="cancel" nbButton status="danger" (click)="cancel()">Cancel</button>
+              <button nbButton status="success" type="submit">Submit</button>
+            </div>
+          </form>
+        </nb-card-body>
+
+    </nb-card>
+  </div>
+</div>
