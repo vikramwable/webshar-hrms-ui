@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6">
+    <nb-card>
+      <nb-card-header>Add New Organization</nb-card-header>
+        <nb-card-body>
+          <form [formGroup] = "organization_form" (ngSubmit) = "submit()" ngNativeValidate>
+            <input type="text" nbInput fullWidth placeholder="Organization name" formControlName="name" required>
+            <nb-checkbox [value]="true" formControlName="isActive">Activate</nb-checkbox>
+            <div class="submit_buttons">
+              <button class="cancel" nbButton status="danger" (click)="cancel()">Cancel</button>
+              <button nbButton status="success" type="submit">Submit</button>
+            </div>
+          </form>
+        </nb-card-body>
+    </nb-card>
+  </div>
+</div>

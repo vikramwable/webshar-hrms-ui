@@ -19,4 +19,8 @@ export class DataService {
   public createEmployee(data: any) {
     return this.httpClient.post(this.REST_API_SERVER + '/employees', data);
   }
+
+  public createOrganization(data: any) {
+    return this.httpClient.post(this.REST_API_SERVER + '/organizations', data);
+  }
 }

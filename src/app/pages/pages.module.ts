@@ -11,6 +11,7 @@ import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { EmployeesComponent } from './employees/employees.component';
+import { OrganizationsComponent } from './organizations/organizations.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { EmployeesComponent } from './employees/employees.component';
   declarations: [
     PagesComponent,
     EmployeesComponent,
+    OrganizationsComponent,
   ],
 })
 export class PagesModule {

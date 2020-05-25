@@ -30,11 +30,13 @@ import {
 import { NbDateFnsDateModule } from '@nebular/date-fns';
 import {  } from '@nebular/theme';
 import { NewEmployeeComponent } from './pages/employees/new-employee/new-employee.component';
+import { NewOrganizationComponent } from './pages/organizations/new-organization/new-organization.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewEmployeeComponent,
+    NewOrganizationComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,6 +68,7 @@ import { NewEmployeeComponent } from './pages/employees/new-employee/new-employe
   bootstrap: [AppComponent],
   entryComponents: [
     NewEmployeeComponent,
+    NewOrganizationComponent,
   ],
 })
 export class AppModule {

@@ -39,6 +39,12 @@ export class EmployeesComponent {
         title: 'E-mail',
         type: 'string',
       },
+      isActive: {
+        title: 'Status',
+        type: 'boolean',
+        filter: false,
+        valuePrepareFunction: (value) => { return value == true ? "Active" : "Inactive" }
+      }
     },
   };
 
