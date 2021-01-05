@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'ngx-footer',
   styleUrls: ['./footer.component.scss'],
+  // tslint:disable-next-line:max-line-length
   template: `
     <span class="created-by">Created and powered by <b><a href="https://www.webshar.com" target="_blank">Webshar</a></b> @2020</span>
     <div class="socials">

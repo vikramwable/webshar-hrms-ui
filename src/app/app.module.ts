@@ -11,6 +11,7 @@ import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 import {
   NbChatModule,
   NbDatepickerModule,
@@ -19,10 +20,24 @@ import {
   NbSidebarModule,
   NbToastrModule,
   NbWindowModule,
+  NbCardModule,
+  NbIconModule,
+  NbInputModule,
+  NbButtonModule,
+  NbCheckboxModule,
+  NbSelectModule,
 } from '@nebular/theme';
+import { NbDateFnsDateModule } from '@nebular/date-fns';
+import {  } from '@nebular/theme';
+import { NewEmployeeComponent } from './pages/employees/new-employee/new-employee.component';
+import { NewOrganizationComponent } from './pages/organizations/new-organization/new-organization.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    NewEmployeeComponent,
+    NewOrganizationComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -41,8 +56,20 @@ import {
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
     CoreModule.forRoot(),
+    NbDateFnsDateModule.forRoot({ format: 'yyyy-MM-dd' }),
+    NbCardModule,
+    NbIconModule,
+    NbInputModule,
+    NbButtonModule,
+    NbCheckboxModule,
+    NbSelectModule,
+    ReactiveFormsModule,
   ],
   bootstrap: [AppComponent],
+  entryComponents: [
+    NewEmployeeComponent,
+    NewOrganizationComponent,
+  ],
 })
 export class AppModule {
 }

@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     {
       value: 'default',
       name: 'Corporate',
-    }
+    },
   ];
 
   currentTheme = 'default';
